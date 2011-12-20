@@ -469,11 +469,9 @@ Feeling your way around this lot:
     $ git checkout master
     $ git merge feature
 
-![merge commit](merge-commit.png)
 
 !SLIDE commandline
 # No Merge Commit
-![rebase initial](merge-initial.png)
 
     $ git checkout feature
     $ git rebase master
@@ -490,10 +488,10 @@ Feeling your way around this lot:
 # It changes history
 
 !SLIDE
-# Push rejects history changes
+## Push rejects history changes
 
 !SLIDE
-# Use rebase only locally
+## Use rebase only locally
 
 !SLIDE
 ## Once you've pushed the branch,
