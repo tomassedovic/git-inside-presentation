@@ -380,4 +380,32 @@ Feeling your way around this lot:
 !SLIDE subsection
 # Tags are commits
 
+!SLIDE center
+![tags](tags.png)
+
+!SLIDE
+# Tag is a name for a particular commit
+
+!SLIDE commandline
+# Stored just like branches
+
+    $ cat .git/refs/tags/beta
+    3666273ea7a53885a2bb6403393d9564cfea6424
+
+    $ cat .git/refs/tags/rc1
+    5cdd7d048afbb4c44b378e142c990907d460a9d7
+
+    $ cat .git/refs/tags/rc2
+    f6dd12d6398e57a84ba993f3f2900ee0636963f3
+
+
+!SLIDE subsection
+# Tags vs. Branches
+
+!SLIDE
+# Tags never change
+
+!SLIDE
+# Branches move forward
+
 
