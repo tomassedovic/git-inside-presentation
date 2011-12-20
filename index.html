@@ -104,76 +104,28 @@
 .git/config
 </code></code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/3">
-<h1>Why Bother?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/4">
-<h1>Curiosity</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/5">
-<h1>Understanding the man pages</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/6">
-<h1>It's actually useful</h1>
-
-<h2>A quick edit of <code>.git/config</code></h2>
-
-<h3>vs.</h3>
-
-<h2>"What was the syntax for adding a new remote repo again?"</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/7">
-<h2>fetch vs. pull</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/8">
-<h2>merge vs. rebase</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/9">
-<h1>Solving tricky situations</h1></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/10">
-<h1>What is git?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/11">
-<h1>Duh</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/12">
-<h1>Distributed</h1>
-
-<h1>Acyclic Directional Graph</h1>
-
-<h2>on top of a filesystem-based</h2>
-
-<h1>NoSQL Immutable Key/Value</h1>
-
-<h2>database</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/13">
-<h1>Duh indeed</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/14">
-<h1>Rewind!</h1></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/15">
 <h1>What is git for?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/16">
-<h1>Filesystem Snapshots</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/17">
-<h1>History</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/18">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/4">
+<h1>File Snapshots &amp; History</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/5">
 <h2>The entire history of all the files in the repo</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/19">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/6">
 <h2>Need to store them somehow</h2></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/20">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/7">
 <h1>Git Object Database</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/21">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/8">
 <h1>Key/Value store</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/22">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/9">
 <h1>Value can be anything</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/23">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/10">
 <h1>Key is a SHA-1 digest</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/24">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/11">
 <h1>Immutable objects</h1>
 
 <h2>Changing a value means storing it separately</h2>
 
 <h2>under a different key.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/25">
-<h1>Distributed by design</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/26">
-<h2>The same object</h2>
-
-<h2>has the same key everywhere</h2>
-
-<h2>all the time.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/27">
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/12">
 <h1>Git's trinity</h1>
 
 <ul>
@@ -182,15 +134,15 @@
 <li>Commit</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/28">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/13">
 <h1>What's a Blob?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/29">
-<h1>a regular file</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/30">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/14">
+<h1>file contents</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/15">
 <h1>no metadata</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/31">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/16">
 <h1>stored as is</h1></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/32">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/17">
 <h1>Blob exposed</h1>
 
 <pre><code><code class="command">$ git cat-file blob 858e207b3ea2e44f37eb6b85653a780ec777ad67</code>
@@ -203,21 +155,22 @@ func main() {
         fmt.Println("Hello, World")
 }
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/33">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/18">
 <h1>What's a Tree?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/34">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/19">
 <h1>a directory</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/35">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/20">
 <h1>contains trees and blobs</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/36">
-<h1>keeps metadata</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/37">
-<h2>filenames</h2>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/21">
+<h1>keeps metadata</h1>
 
-<h2>file mode bits</h2>
-
-<h2>path and directory structure</h2></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/38">
+<ul>
+<li>filenames</li>
+<li>file mode bits</li>
+<li>path and directory structure</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/22">
 <h1>Tree exposed</h1>
 
 <pre><code><code class="command">$ git ls-tree d6eaef3888c13602a89a5c59c88007819af10f98</code>
@@ -227,29 +180,25 @@ func main() {
 100644 blob ae368b0135b0d26cf6c976909b58    COPYING
 100644 blob ee3e239aca529f82eed2fbae8b08    db.go
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/39">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/23">
 <h1>Renaming a file</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/40">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/24">
 <h1><strong>doesn't</strong></h1>
 
 <h1>change the blob</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/41">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/25">
 <h1><strong>does</strong></h1>
 
 <h1>create a new tree</h1></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/42">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/26">
 <h1>What's a Commit?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/43">
-<h1>repository snapshot</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/44">
-<h1>piece of history</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/45">
-<h1>git's cornerstone</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/46">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/27">
+<h1>repository snapshot in time</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/28">
 <h2>has one Tree</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/47">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/29">
 <h2>one or more parents</h2></div>
-</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/48">
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/30">
 <h1>metadata</h1>
 
 <ul>
@@ -259,7 +208,7 @@ func main() {
 <li>...</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/49">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/31">
 <h1>Commit exposed</h1>
 
 <pre><code><code class="command">$ git cat-file commit fa29...efae368b0135b0d26cf6c976909b58</code>
@@ -271,55 +220,51 @@ committer Tomas Sedovic &lt;tomas@sedovic.cz&gt; 1324171835 +0100
 
 Add "hello world" in Go
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/50">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/32">
 <h1>Keeping track of history</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/51">
-<h2>Commit is a snapshot in time</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/52">
-<h2>Its parent is the previous snapshot</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/53">
-<h2><em>Its</em> parent is the snapshot before that</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/54">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/33">
+<h2>Every commit keeps track of its parent</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/34">
 <h1>Commits all the way down!</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/55">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/35">
 <h2>"Show me a commit,</h2>
 
 <h2>and I'll show you its history."</h2></div>
-</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/56">
+</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/36">
 <h1>Commits</h1>
 
 <p><img src="./file/content/commit-history.png" alt="history"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/57">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/37">
 <h1>Branches, too!</h1></div>
-</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/58">
+</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/38">
 <p><img src="./file/content/commit-branches.png" alt="branches"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/59">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/39">
 <h1>Nota bene</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/60">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/40">
 <h2>You can see commit's past but not its future</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/61">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/41">
 <h2>Branch must keep track of the latest commit</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/62">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/42">
 <h2>It's possible to have "orphans"</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/63">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/43">
 <h2>No harm but they waste space</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/64">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/44">
 <h1>Garbage collection</h1></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/65">
-<h1>Epiphany</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/66">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/45">
 <h1>Everything Is A Commit</h1></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/67">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/46">
 <h1>Branches are commits</h1></div>
-</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/68">
+</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/47">
+<h1>Branches</h1>
+
 <p><img src="./file/content/branches.png" alt="branches"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/69">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/48">
 <h2>Branch is just a named pointer to a commit</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/70">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/49">
 <h2>Always points to the latest change</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/71">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/50">
 <h2>Must be updated when a new commit is added</h2></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/72">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/51">
 <h1>Just a named commit</h1>
 
 <pre><code><code class="command">$ cat .git/refs/heads/master</code>
@@ -331,45 +276,39 @@ Add "hello world" in Go
 </code><code class="command">$ cat .git/refs/heads/stable</code>
 <code class="result">c83126effb209dbf492f01589005ecd77e4deaa8
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/73">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/52">
 <h1>What does it mean?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/74">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/53">
 <h2>Whenever you use a branch,</h2>
 
 <h2>you can use a commit hash instead,</h2>
 
 <h2>and vice versa.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/75">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/54">
 <h1>checkout</h1>
 
 <pre><code><code class="command">$ git checkout master</code>
 <code class="result">
-
 </code><code class="command">$ git checkout d846a66e6c8b6b301954bc4a9821698908805192</code>
-</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/76">
-<h1>format-patch</h1>
-
-<pre><code><code class="command">$ git format-patch -o /tmp/patches master</code>
 <code class="result">
-
-</code><code class="command">$ git format-patch -o /tmp/patches d846c8b6b301954bc4a982169</code>
+</code><code class="command">$ git checkout HEAD^^^</code>
 </code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/77">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/55">
 <h1>interactive rebase</h1>
 
 <pre><code><code class="command">$ git rebase -i master</code>
 <code class="result">
-
 </code><code class="command">$ git rebase -i d846a66e6c8b6b301954bc4a9821698908805192</code>
+<code class="result">
+</code><code class="command">$ git rebase -i HEAD^^^</code>
 </code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/78">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/56">
 <h1>Tags are commits</h1></div>
-</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/79">
+</div><div class="slide" data-transition="none"><div class="content center" ref="content/01_slide/57">
 <p><img src="./file/content/tags.png" alt="tags"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/80">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/58">
 <h1>Tag is a name for a particular commit</h1></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/81">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/59">
 <h1>Stored just like branches</h1>
 
 <pre><code><code class="command">$ cat .git/refs/tags/beta</code>
@@ -381,84 +320,71 @@ Add "hello world" in Go
 </code><code class="command">$ cat .git/refs/tags/rc2</code>
 <code class="result">f6dd12d6398e57a84ba993f3f2900ee0636963f3
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/82">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/60">
 <h1>Tags vs. Branches</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/83">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/61">
 <h1>Tags never change</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/84">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/62">
 <h1>Branches move forward</h1></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/85">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/63">
 <h1>Merging branches</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/86">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/64">
 <h2>Branches exist to be merged back in,</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/87">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/65">
 <h2>or die.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/88">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/66">
 <h1><code>git-merge</code></h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/89">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/67">
 <h2>Joins two branches together</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/90">
-<h2>Merges a topic branch onto the current one</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/91">
-<h2>The order is significant</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/92">
-<h1>These are different</h1>
-
-<pre><code>git checkout master; git merge feature
-
-git checkout feature; git merge master
-</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/93">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/68">
 <h2>Merging creates a new commit</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/94">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/69">
 <h1>Merge Commit</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/95">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/70">
 <h2>Has two parents</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/96">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/71">
 <h2>Determines the commit order</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/97">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/72">
 <h2>Resolves conflicts</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/98">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/73">
 <h1>Merging 2 branches</h1>
 
 <p><img src="./file/content/merge-initial.png" alt="merge initial"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/99">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/74">
 <h1>Merge Commit</h1>
 
 <p><img src="./file/content/merge-commit.png" alt="merge commit"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/100">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/75">
 <h1>Single timeline</h1>
 
 <p><img src="./file/content/merge-final.png" alt="merge final"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/101">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/76">
 <h1>Rebasing</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/102">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/77">
 <h2>"Merging without the bloody merge commit"</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/103">
-<h1>Very powerful</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/104">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/78">
 <h1>Different semantics</h1>
 
 <pre><code>$ git checkout feature
 $ git rebase master
 </code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/105">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/79">
 <h2>Moves the rebased branch on top of the base branch</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/106">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/80">
 <h1>Rebase Y onto F</h1>
 
 <p><img src="./file/content/merge-initial.png" alt="rebase initial"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/107">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/81">
 <h1>Y is on top of F</h1>
 
 <p><img src="./file/content/rebase-final.png" alt="rebase final"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/108">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/82">
 <h2>They're still separate branches</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/109">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/83">
 <h1>Fast-forward Merging</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/110">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/84">
 <h2>Merging a rebased branch, means no merge commit.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/111">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/85">
 <h1>Creates Merge Commit</h1>
 
 <p><img src="./file/content/merge-initial.png" alt="rebase initial"/></p>
@@ -466,7 +392,7 @@ $ git rebase master
 <pre><code><code class="command">$ git checkout master</code>
 <code class="command">$ git merge feature</code>
 </code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/112">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/86">
 <h1>No Merge Commit</h1>
 
 <pre><code><code class="command">$ git checkout feature</code>
@@ -478,79 +404,75 @@ $ git rebase master
 <pre><code><code class="command">$ git checkout master</code>
 <code class="command">$ git merge feature</code>
 </code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/113">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/87">
 <h1>Rebase caveats</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/114">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/88">
 <h1>It changes history</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/115">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/89">
 <h2>Push rejects history changes</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/116">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/90">
 <h2>Use rebase only locally</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/117">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/91">
 <h2>Once you've pushed the branch,</h2>
 
 <h2>you <strong>really</strong> should use merge.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/118">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/92">
 <h1><code>git push --force</code></h1>
 
 <h2>works but it's evil</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/119">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/93">
 <h2>Slap in the face to everyone who pulls the changed history.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/120">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/94">
 <h1>Remote repositories</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/121">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/95">
 <h1>Git is decentralised</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/122">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/96">
 <h2>Synchronise with any number of repos</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/123">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/97">
 <h2>No topology constraints</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/124">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/98">
 <h1><code>git-fetch</code></h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/125">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/99">
 <h2>Updates all your commits from the remote repository</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/126">
-<h2>Doesn't change any references</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/127">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/100">
+<h2>Doesn't change any local branches</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/101">
 <h2>Completely safe</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/128">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/102">
 <h1><code>git-pull</code></h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/129">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/103">
 <h2><code>git-fetch</code> followed by <code>git-merge</code></h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/130">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/104">
 <h2>First, gets the remote commits</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/131">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/105">
 <h2>Then, updates your current branch</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/132">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/106">
 <h2>Must be run on a clean repo</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/133">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/107">
 <h2>May cause conflicts</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/134">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/108">
 <h2>May create merge commits</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/135">
-<h2><strong>Don't</strong></h2>
-
-<h2>pull on a branch with local changes</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/136">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/109">
 <h1><code>git-push</code></h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/137">
-<h2>Sends the local commits to the remote repo</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/138">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/110">
 <h2>Reverse of pull</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/139">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/111">
+<h2>Sends the local commits to the remote repo</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/112">
 <h2>Updates the commits <strong>and</strong> references</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/140">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/113">
 <h2>May be rejected</h2></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/141">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/114">
 <h1>References</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/142">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/115">
 <h2>Git can be operated using commit hashes only</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/143">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/116">
 <h2>The Web can be operated using IP addresses only, too.</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/144">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/117">
 <h1>Refs are git's DNS</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/145">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/118">
 <h2>Located in <code>.git/refs/</code></h2></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/146">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/119">
 <h1>Branch references</h1>
 
 <pre><code><code class="command">$ ls .git/refs/heads/</code>
@@ -560,7 +482,7 @@ $ git rebase master
   review
   bz-3482938
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/147">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/120">
 <h1>Tag references</h1>
 
 <pre><code><code class="command">$ ls .git/refs/tags/</code>
@@ -570,13 +492,13 @@ $ git rebase master
   v0.7.0_RC4
   v0.7.0_RC3
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/148">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/121">
 <h1>Remotes</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/149">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/122">
 <h2>Reference remote branches</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/150">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/123">
 <h2><code>.git/refs/remotes/</code></h2></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/151">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/124">
 <h2>Every remote repo has its own subdirectory</h2>
 
 <pre><code><code class="command">$ ls .git/refs/remotes/</code>
@@ -585,16 +507,16 @@ $ git rebase master
   github
   private
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/152">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/125">
 <h2>Refs contain <strong>only</strong> commit hashes</h2>
 
 <pre><code><code class="command">$ cat .git/refs/remotes/github/master</code>
 <code class="result">
 77014ab62efd1cfcc5c6d9e077c90dae8e7798c9
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/153">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/126">
 <h1>Where's the repo URI?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/154">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/127">
 <h1><code>config</code></h1>
 
 <pre><code><code class="command">$ cat .git/config</code>
@@ -609,7 +531,7 @@ $ git rebase master
     fetch = +refs/heads/*:refs/remotes/private/*
 ...
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/155">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/128">
 <h1>Local remotes</h1>
 
 <pre><code><code class="command">$ cat .git/config</code>
@@ -620,9 +542,9 @@ $ git rebase master
     fetch = +refs/heads/*:refs/remotes/origin/*
 ...
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/156">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/129">
 <h1>Name collisions</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/157">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/130">
 <h1>Use the full ref</h1>
 
 <pre><code>git checkout refs/heads/release
@@ -637,9 +559,9 @@ $ git rebase master
 
 <pre><code>git checkout refs/remotes/origin/release
 </code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/158">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/131">
 <h1>Back to objects</h1></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/159">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/132">
 <h1>Object database</h1>
 
 <pre><code><code class="command">$ ls .git/objects</code>
@@ -657,17 +579,15 @@ $ git rebase master
 .git/objects/de/19ac038179f28797ec8264e5721ee3528fe1c8
 ...
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/160">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/133">
 <h2>Every object stored under its own hash</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/161">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/134">
 <h2>Blobs, Trees, Commits</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/162">
-<h2>Not just copies of the files they represent</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/163">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/135">
 <h2>Compressed contents + type and size</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/164">
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_slide/136">
 <h1>Inspecting objects</h1></div>
-</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/165">
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="content/01_slide/137">
 <h2><code>git cat-file type hash</code></h2>
 
 <pre><code><code class="command">$ git cat-file blob 858e207b3ea2e44f37eb6b85653a780ec777ad67</code>
@@ -680,9 +600,9 @@ func main() {
         fmt.Println("Hello, World")
 }
 </code></code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/166">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="content/01_slide/138">
 <h1>That's all</h1></div>
-</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/167">
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="content/01_slide/139">
 <h1>Still don't have enough?</h1>
 
 <ul>
