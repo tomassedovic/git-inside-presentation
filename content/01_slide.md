@@ -42,13 +42,16 @@ Feeling your way around this lot:
 ### vs. ###
 ## "What was the syntax for adding a new remote repo again?" ##
 
-!SLIDE subsection
+!SLIDE
 ## fetch vs. pull ##
 
-!SLIDE subsection
+!SLIDE
 ## merge vs. rebase ##
 
 !SLIDE
+# Solving tricky situations
+
+!SLIDE subsection
 # What is git? #
 
 !SLIDE
@@ -69,6 +72,7 @@ Feeling your way around this lot:
 !SLIDE
 # Rewind! #
 
+
 !SLIDE subsection
 # What is git for?
 
@@ -79,14 +83,11 @@ Feeling your way around this lot:
 # History #
 
 !SLIDE
-# The entire history
-# of all the files in the repo
+## The entire history of all the files in the repo
 
 !SLIDE
-# Need to store them somehow #
+## Need to store them somehow
 
-!SLIDE
-# Let's invent a new database!
 
 !SLIDE subsection
 # Git Object Database #
@@ -103,11 +104,6 @@ Feeling your way around this lot:
 !SLIDE
 # Immutable objects
 ## Changing a value means storing it separately
-## ... ##
-
-!SLIDE
-# Immutable objects
-## Changing a value means storing it separately
 ## under a different key.
 
 !SLIDE
@@ -115,14 +111,7 @@ Feeling your way around this lot:
 
 !SLIDE
 ## The same object
-
-!SLIDE
-## has the same key
-
-!SLIDE
-## everywhere
-
-!SLIDE
+## has the same key everywhere
 ## all the time.
 
 
@@ -174,11 +163,7 @@ Feeling your way around this lot:
 
 !SLIDE
 ## filenames
-
-!SLIDE
-## file attributes
-
-!SLIDE
+## file mode bits
 ## path and directory structure
 
 !SLIDE commandline
@@ -186,10 +171,10 @@ Feeling your way around this lot:
 
     $ git ls-tree d6eaef3888c13602a89a5c59c88007819af10f98
 
-    100644 blob 7169...4f9d8b8a3874cb9afea9afab	hello.go
-    040000 tree 27a2...ef8d582b6fafa5163251898e	lib
-    100644 blob ae36...8b0135b0d26cf6c976909b58	COPYING
-    100644 blob ee3e...239aca529f82eed2fbae8b08	db.go
+    100644 blob 71694f9d8b8a3874cb9afea9afab	hello.go
+    040000 tree 27a2ef8d582b6fafa5163251898e	lib
+    100644 blob ae368b0135b0d26cf6c976909b58	COPYING
+    100644 blob ee3e239aca529f82eed2fbae8b08	db.go
 
 !SLIDE subsection
 # Renaming a file
@@ -207,21 +192,21 @@ Feeling your way around this lot:
 # What's a Commit?
 
 !SLIDE
-# a repository snapshot
+# repository snapshot
 
 !SLIDE
-# a piece of history
+# piece of history
 
 !SLIDE
 # git's cornerstone
 
 !SLIDE
-# has one Tree
+## has one Tree
 
 !SLIDE
-# one or more parents
+## one or more parents
 
-!SLIDE bullets incremental
+!SLIDE bullets
 # metadata
 
 * author's name & email
@@ -246,22 +231,20 @@ Feeling your way around this lot:
 # Keeping track of history
 
 !SLIDE
-# Commit is a snapshot in time
+## Commit is a snapshot in time
 
 !SLIDE
-# Its parent is the previous snapshot
+## Its parent is the previous snapshot
 
 !SLIDE
-# Whose parent is the snapshot before that
+## *Its* parent is the snapshot before that
 
 !SLIDE
 # Commits all the way down!
 
 !SLIDE
-# "Show me a commit,"
-
-!SLIDE
-# "and I'll show you its history."
+## "Show me a commit,
+## and I'll show you its history."
 
 !SLIDE center
 # Commits
@@ -277,16 +260,16 @@ Feeling your way around this lot:
 # Nota bene
 
 !SLIDE
-# You can see commit's past but not its future
+## You can see commit's past but not its future
 
 !SLIDE
-# Branch needs to keep track of the latest commit
+## Branch must keep track of the latest commit
 
 !SLIDE
-# It's possible to have "orphans"
+## It's possible to have "orphans"
 
 !SLIDE
-# No harm but they waste space
+## No harm but they waste space
 
 !SLIDE
 # Garbage collection
@@ -304,13 +287,13 @@ Feeling your way around this lot:
 ![branches](branches.png)
 
 !SLIDE
-# Branch is just a named pointer to a commit
+## Branch is just a named pointer to a commit
 
 !SLIDE
-# Always points to the latest change
+## Always points to the latest change
 
 !SLIDE
-# Must be updated when a new commit is added
+## Must be updated when a new commit is added
 
 !SLIDE commandline
 # Just a named commit
@@ -328,13 +311,9 @@ Feeling your way around this lot:
 # What does it mean?
 
 !SLIDE
-# Whenever you use a branch,
-
-!SLIDE
-# you can use a commit hash instead,
-
-!SLIDE
-# and vice versa.
+## Whenever you use a branch,
+## you can use a commit hash instead,
+## and vice versa.
 
 !SLIDE commandline
 # checkout
@@ -396,22 +375,22 @@ Feeling your way around this lot:
 # Merging branches
 
 !SLIDE
-# Branches exist to be merged back in,
+## Branches exist to be merged back in,
 
 !SLIDE
-# or die.
+## or die.
 
 !SLIDE
 # `git-merge`
 
 !SLIDE
-# Joins two branches together
+## Joins two branches together
 
 !SLIDE
-# Merges a topic branch onto the current one
+## Merges a topic branch onto the current one
 
 !SLIDE
-# The order is significant
+## The order is significant
 
 !SLIDE
 # These are different
@@ -421,25 +400,19 @@ Feeling your way around this lot:
     git checkout feature; git merge master
 
 !SLIDE
-# Merging creates a new commit
+## Merging creates a new commit
 
 !SLIDE
 # Merge Commit
 
 !SLIDE
-# Has two parents
+## Has two parents
 
 !SLIDE
-# Determines the commit order
+## Determines the commit order
 
 !SLIDE
-# Fixes conflicts
-
-!SLIDE
-# Branches still tracked separately
-
-!SLIDE
-# Merge commit joins their changes
+## Resolves conflicts
 
 !SLIDE
 # Merging 2 branches
@@ -458,7 +431,7 @@ Feeling your way around this lot:
 # Rebasing
 
 !SLIDE
-# "Merging without the bloody merge commit"
+## "Merging without the bloody merge commit"
 
 !SLIDE
 # Very powerful
@@ -470,7 +443,7 @@ Feeling your way around this lot:
     $ git rebase master
 
 !SLIDE
-# Moves the rebased branch on top of the base branch
+## Moves the rebased branch on top of the base branch
 
 !SLIDE
 # Rebase Y onto F
@@ -481,28 +454,31 @@ Feeling your way around this lot:
 ![rebase final](rebase-final.png)
 
 !SLIDE
-# They're still separate branches
+## They're still separate branches
 
 !SLIDE
 # Fast-forward Merging
 
 !SLIDE
-# Merging a rebased branch,
-
-!SLIDE
-# means no merge commit.
+## Merging a rebased branch, means no merge commit.
 
 !SLIDE commandline
-# With Merge Commit
+# Creates Merge Commit
+![rebase initial](merge-initial.png)
 
     $ git checkout master
     $ git merge feature
 
+![merge commit](merge-commit.png)
+
 !SLIDE commandline
 # No Merge Commit
+![rebase initial](merge-initial.png)
 
     $ git checkout feature
     $ git rebase master
+
+![rebase final](rebase-final.png)
 
     $ git checkout master
     $ git merge feature
@@ -520,10 +496,8 @@ Feeling your way around this lot:
 # Use rebase only locally
 
 !SLIDE
-# Once you've pushed the branch,
-
-!SLIDE
-# you **really** should use merge.
+## Once you've pushed the branch,
+## you **really** should use merge.
 
 !SLIDE
 # `git push --force`
@@ -606,7 +580,7 @@ Feeling your way around this lot:
 ## Git can be operated using commit hashes only
 
 !SLIDE
-## Internet can be operated using IP addresses only, too
+## The Web can be operated using IP addresses only, too.
 
 !SLIDE
 # Refs are git's DNS
@@ -645,7 +619,7 @@ Feeling your way around this lot:
 !SLIDE
 ## `.git/refs/remotes/`
 
-!SLIDE
+!SLIDE commandline
 ## Every remote repo has its own subdirectory
 
     $ ls .git/refs/remotes/
@@ -666,7 +640,7 @@ Feeling your way around this lot:
 # Where's the repo URI?
 
 !SLIDE commandline
-# Into `config`
+# `config`
 
     $ cat .git/config
 
