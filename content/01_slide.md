@@ -27,24 +27,25 @@ Feeling your way around this lot:
     .git/config
 
 
-!SLIDE
+!SLIDE subsection
 # Why Bother? #
 
-!SLIDE subsection
+!SLIDE
 # Curiosity #
 
-!SLIDE subsection
+!SLIDE
+# Understanding the man pages
+
+!SLIDE
 # It's actually useful #
 ## A quick edit of `.git/config` ##
 ### vs. ###
 ## "What was the syntax for adding a new remote repo again?" ##
 
 !SLIDE subsection
-# It's actually useful #
 ## fetch vs. pull ##
 
 !SLIDE subsection
-# It's actually useful #
 ## merge vs. rebase ##
 
 !SLIDE
@@ -67,6 +68,9 @@ Feeling your way around this lot:
 
 !SLIDE
 # Rewind! #
+
+!SLIDE subsection
+# What is git for?
 
 !SLIDE
 # Filesystem Snapshots #
@@ -119,29 +123,9 @@ Feeling your way around this lot:
 ## everywhere
 
 !SLIDE
-## all the time
-
-!SLIDE
-## regardless of metadata.
+## all the time.
 
 
-!SLIDE subsection
-# What objects?
-
-!SLIDE
-# Files
-
-!SLIDE
-# Directories
-
-!SLIDE
-# Commits
-
-!SLIDE
-# Branches
-
-!SLIDE
-# Tags
 
 !SLIDE bullets
 # Git's trinity
@@ -546,7 +530,7 @@ Feeling your way around this lot:
 ## works but it's evil
 
 !SLIDE
-# Slap in the face to everyone who pulls the changed history.
+## Slap in the face to everyone who pulls the changed history.
 
 
 !SLIDE subsection
@@ -556,13 +540,234 @@ Feeling your way around this lot:
 # Git is decentralised
 
 !SLIDE
-# You can synchronise it with any number repos
+## Synchronise with any number of repos
 
 !SLIDE
-# No constraints on the topology
+## No topology constraints
 
 !SLIDE
 # `git-fetch`
 
 !SLIDE
-# Updates all your commits from the remote repository
+## Updates all your commits from the remote repository
+
+!SLIDE
+## Doesn't change any references
+
+!SLIDE
+## Completely safe
+
+!SLIDE
+# `git-pull`
+
+!SLIDE
+## `git-fetch` followed by `git-merge`
+
+!SLIDE
+## First, gets the remote commits
+
+!SLIDE
+## Then, updates your current branch
+
+!SLIDE
+## Must be run on a clean repo
+
+!SLIDE
+## May cause conflicts
+
+!SLIDE
+## May create merge commits
+
+!SLIDE
+## **Don't**
+## pull on a branch with local changes
+
+!SLIDE
+# `git-push`
+
+!SLIDE
+## Sends the local commits to the remote repo
+
+!SLIDE
+## Reverse of pull
+
+!SLIDE
+## Updates the commits **and** references
+
+!SLIDE
+## May be rejected
+
+
+
+!SLIDE subsection
+# References
+
+!SLIDE
+## Git can be operated using commit hashes only
+
+!SLIDE
+## Internet can be operated using IP addresses only, too
+
+!SLIDE
+# Refs are git's DNS
+
+!SLIDE
+## Located in `.git/refs/`
+
+!SLIDE commandline
+# Branch references
+
+    $ ls .git/refs/heads/
+
+      master
+      admin_ui
+      review
+      bz-3482938
+
+
+!SLIDE commandline
+# Tag references
+
+    $ ls .git/refs/tags/
+
+      v0.7.0_RC1
+      v0.7.0_RC2
+      v0.7.0_RC4
+      v0.7.0_RC3
+
+
+!SLIDE
+# Remotes
+
+!SLIDE
+## Reference remote branches
+
+!SLIDE
+## `.git/refs/remotes/`
+
+!SLIDE
+## Every remote repo has its own subdirectory
+
+    $ ls .git/refs/remotes/
+
+      origin
+      github
+      private
+
+
+!SLIDE commandline
+## Refs contain **only** commit hashes
+
+    $ cat .git/refs/remotes/github/master
+
+    77014ab62efd1cfcc5c6d9e077c90dae8e7798c9
+
+!SLIDE
+# Where's the repo URI?
+
+!SLIDE commandline
+# Into `config`
+
+    $ cat .git/config
+
+    ...
+    [remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = git@github.com:aeolusproject/conductor.git
+
+    [remote "private"]
+        url = ssh://myprivaterepo.org/conductor.git
+        fetch = +refs/heads/*:refs/remotes/private/*
+    ...
+
+!SLIDE commandline
+# Local remotes
+
+    $ cat .git/config
+
+    ...
+    [remote "origin"]
+        url = /var/backup/tsedovic/myrepo.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+    ...
+
+!SLIDE
+# Name collisions
+
+!SLIDE
+# Use the full ref
+
+    git checkout refs/heads/release
+
+vs.
+
+    git checkout refs/tags/release
+
+vs.
+
+    git checkout refs/remotes/origin/release
+
+
+!SLIDE subsection
+# Back to objects
+
+!SLIDE commandline
+# Object database
+
+    $ ls .git/objects
+
+    .git/objects/d6/eaef3888c13602a89a5c59c88007819af10f98
+    .git/objects/85/8e207b3ea2e44f37eb6b85653a780ec777ad67
+    .git/objects/09/ddc1a30c7971694f9d8b8a3874cb9afea9afab
+    .git/objects/02/69872c9a2fb852656260cc84d6a1ffc2ef4497
+    .git/objects/e7/c3efffa012f7e73d544616dda2766be19145a1
+    .git/objects/b2/07a523255627a2ef8d582b6fafa5163251898e
+    .git/objects/0c/079e5f2e1b8b1179203dfd994f4dc5489d61f5
+    .git/objects/2f/b5341ee744f821104bb32d4b2aacbdff66494c
+    .git/objects/fa/2925fc37efae368b0135b0d26cf6c976909b58
+    .git/objects/45/93afa00bb4cb52eb289f72788a1879231947d6
+    .git/objects/de/19ac038179f28797ec8264e5721ee3528fe1c8
+    ...
+
+
+!SLIDE
+## Every object stored under its own hash
+
+!SLIDE
+## Blobs, Trees, Commits
+
+!SLIDE
+## Not just copies of the files they represent
+
+!SLIDE
+## Compressed contents + type and size
+
+!SLIDE
+# Inspecting objects
+
+
+!SLIDE commandline
+## `git cat-file type hash`
+
+    $ git cat-file blob 858e207b3ea2e44f37eb6b85653a780ec777ad67
+
+    package main
+
+    import "fmt"
+
+    func main() {
+            fmt.Println("Hello, World")
+    }
+
+
+
+!SLIDE subsection
+# That's all
+
+
+!SLIDE bullets
+# Still don't have enough?
+
+* man git
+* http://book.git-scm.com/index.html
+* http://newartisans.com/2008/04/git-from-the-bottom-up/
