@@ -408,4 +408,63 @@ Feeling your way around this lot:
 !SLIDE
 # Branches move forward
 
+!SLIDE subsection
+# Merging branches
 
+!SLIDE
+# Branches exist to be merged back in
+
+!SLIDE
+# Or die
+
+!SLIDE
+# `git-merge`
+
+!SLIDE
+# Joins two branches together
+
+!SLIDE
+# Merges a topic branch onto the current one
+
+!SLIDE
+# The order is significant
+
+!SLIDE
+# These are different
+
+    git checkout master; git merge feature
+
+    git checkout feature; git merge master
+
+!SLIDE
+# Merging creates a new commit
+
+!SLIDE
+# Merge Commit
+
+!SLIDE
+# Has two parents
+
+!SLIDE
+# Determines the commit order
+
+!SLIDE
+# Fixes conflicts
+
+!SLIDE
+# Branches still tracked separately
+
+!SLIDE
+# Merge commit joins their changes
+
+!SLIDE
+# Merging 2 branches
+![merge initial](merge-initial.png)
+
+!SLIDE
+# Merge Commit
+![merge commit](merge-commit.png)
+
+!SLIDE
+# Single timeline
+![merge final](merge-final.png)
