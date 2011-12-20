@@ -28,59 +28,11 @@ Feeling your way around this lot:
 
 
 !SLIDE subsection
-# Why Bother? #
-
-!SLIDE
-# Curiosity #
-
-!SLIDE
-# Understanding the man pages
-
-!SLIDE
-# It's actually useful #
-## A quick edit of `.git/config` ##
-### vs. ###
-## "What was the syntax for adding a new remote repo again?" ##
-
-!SLIDE
-## fetch vs. pull ##
-
-!SLIDE
-## merge vs. rebase ##
-
-!SLIDE
-# Solving tricky situations
-
-!SLIDE subsection
-# What is git? #
-
-!SLIDE
-# Duh #
-
-!SLIDE
-# Distributed #
-# Acyclic Directional Graph #
-
-## on top of a filesystem-based ##
-# NoSQL Immutable Key/Value #
-## database ##
-
-!SLIDE
-# Duh indeed #
-
-
-!SLIDE
-# Rewind! #
-
-
-!SLIDE subsection
 # What is git for?
 
 !SLIDE
-# Filesystem Snapshots #
+# File Snapshots & History
 
-!SLIDE
-# History #
 
 !SLIDE
 ## The entire history of all the files in the repo
@@ -106,14 +58,6 @@ Feeling your way around this lot:
 ## Changing a value means storing it separately
 ## under a different key.
 
-!SLIDE
-# Distributed by design
-
-!SLIDE
-## The same object
-## has the same key everywhere
-## all the time.
-
 
 
 !SLIDE bullets
@@ -127,7 +71,7 @@ Feeling your way around this lot:
 # What's a Blob?
 
 !SLIDE
-# a regular file
+# file contents
 
 !SLIDE
 # no metadata
@@ -158,13 +102,12 @@ Feeling your way around this lot:
 !SLIDE
 # contains trees and blobs
 
-!SLIDE
+!SLIDE bullets
 # keeps metadata
 
-!SLIDE
-## filenames
-## file mode bits
-## path and directory structure
+* filenames
+* file mode bits
+* path and directory structure
 
 !SLIDE commandline
 # Tree exposed
@@ -192,13 +135,7 @@ Feeling your way around this lot:
 # What's a Commit?
 
 !SLIDE
-# repository snapshot
-
-!SLIDE
-# piece of history
-
-!SLIDE
-# git's cornerstone
+# repository snapshot in time
 
 !SLIDE
 ## has one Tree
@@ -231,13 +168,7 @@ Feeling your way around this lot:
 # Keeping track of history
 
 !SLIDE
-## Commit is a snapshot in time
-
-!SLIDE
-## Its parent is the previous snapshot
-
-!SLIDE
-## *Its* parent is the snapshot before that
+## Every commit keeps track of its parent
 
 !SLIDE
 # Commits all the way down!
@@ -275,15 +206,13 @@ Feeling your way around this lot:
 # Garbage collection
 
 !SLIDE subsection
-# Epiphany
-
-!SLIDE
 # Everything Is A Commit
 
-!SLIDE subsection
+!SLIDE
 # Branches are commits
 
 !SLIDE center
+# Branches
 ![branches](branches.png)
 
 !SLIDE
@@ -320,25 +249,18 @@ Feeling your way around this lot:
 
     $ git checkout master
 
-
     $ git checkout d846a66e6c8b6b301954bc4a9821698908805192
 
-!SLIDE commandline
-# format-patch
-
-    $ git format-patch -o /tmp/patches master
-
-
-    $ git format-patch -o /tmp/patches d846c8b6b301954bc4a982169
+    $ git checkout HEAD^^^
 
 !SLIDE commandline
 # interactive rebase
 
     $ git rebase -i master
 
-
     $ git rebase -i d846a66e6c8b6b301954bc4a9821698908805192
 
+    $ git rebase -i HEAD^^^
 
 !SLIDE subsection
 # Tags are commits
@@ -387,19 +309,6 @@ Feeling your way around this lot:
 ## Joins two branches together
 
 !SLIDE
-## Merges a topic branch onto the current one
-
-!SLIDE
-## The order is significant
-
-!SLIDE
-# These are different
-
-    git checkout master; git merge feature
-
-    git checkout feature; git merge master
-
-!SLIDE
 ## Merging creates a new commit
 
 !SLIDE
@@ -432,9 +341,6 @@ Feeling your way around this lot:
 
 !SLIDE
 ## "Merging without the bloody merge commit"
-
-!SLIDE
-# Very powerful
 
 !SLIDE
 # Different semantics
@@ -524,7 +430,7 @@ Feeling your way around this lot:
 ## Updates all your commits from the remote repository
 
 !SLIDE
-## Doesn't change any references
+## Doesn't change any local branches
 
 !SLIDE
 ## Completely safe
@@ -550,18 +456,15 @@ Feeling your way around this lot:
 !SLIDE
 ## May create merge commits
 
-!SLIDE
-## **Don't**
-## pull on a branch with local changes
 
 !SLIDE
 # `git-push`
 
 !SLIDE
-## Sends the local commits to the remote repo
+## Reverse of pull
 
 !SLIDE
-## Reverse of pull
+## Sends the local commits to the remote repo
 
 !SLIDE
 ## Updates the commits **and** references
@@ -709,14 +612,11 @@ vs.
 ## Blobs, Trees, Commits
 
 !SLIDE
-## Not just copies of the files they represent
-
-!SLIDE
 ## Compressed contents + type and size
+
 
 !SLIDE
 # Inspecting objects
-
 
 !SLIDE commandline
 ## `git cat-file type hash`
