@@ -468,3 +468,85 @@ Feeling your way around this lot:
 !SLIDE
 # Single timeline
 ![merge final](merge-final.png)
+
+
+!SLIDE subsection
+# Rebasing
+
+!SLIDE
+# "Merging without the bloody merge commit"
+
+!SLIDE
+# Very powerful
+
+!SLIDE
+# Different semantics
+
+    $ git checkout feature
+    $ git rebase master
+
+!SLIDE
+# Moves the rebased branch on top of the base branch
+
+!SLIDE
+# Rebase Y onto F
+![rebase initial](merge-initial.png)
+
+!SLIDE
+# Y is on top of F
+![rebase final](rebase-final.png)
+
+!SLIDE
+# They're still separate branches
+
+!SLIDE
+# Fast-forward Merging
+
+!SLIDE
+# Merging a rebased branch,
+
+!SLIDE
+# means no merge commit.
+
+!SLIDE commandline
+# With Merge Commit
+
+    $ git checkout master
+    $ git merge feature
+
+!SLIDE commandline
+# No Merge Commit
+
+    $ git checkout feature
+    $ git rebase master
+
+    $ git checkout master
+    $ git merge feature
+
+!SLIDE subsection
+# Rebase caveats
+
+!SLIDE
+# It changes history
+
+!SLIDE
+# Push rejects history changes
+
+!SLIDE
+# Use rebase only locally
+
+!SLIDE
+# Once you've pushed the branch,
+
+!SLIDE
+# you **really** should use merge.
+
+!SLIDE
+# `git push --force`
+## works but it's evil
+
+!SLIDE
+# Slap in the face to everyone who pulls the changed history.
+
+
+
