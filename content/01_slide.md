@@ -412,10 +412,10 @@ Feeling your way around this lot:
 # Merging branches
 
 !SLIDE
-# Branches exist to be merged back in
+# Branches exist to be merged back in,
 
 !SLIDE
-# Or die
+# or die.
 
 !SLIDE
 # `git-merge`
@@ -549,4 +549,20 @@ Feeling your way around this lot:
 # Slap in the face to everyone who pulls the changed history.
 
 
+!SLIDE subsection
+# Remote repositories
 
+!SLIDE
+# Git is decentralised
+
+!SLIDE
+# You can synchronise it with any number repos
+
+!SLIDE
+# No constraints on the topology
+
+!SLIDE
+# `git-fetch`
+
+!SLIDE
+# Updates all your commits from the remote repository
