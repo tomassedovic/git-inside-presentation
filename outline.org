@@ -1,0 +1,198 @@
+* Slides Presentation
+** The Goal
+*** Understand what you see in `git init; find .git`
+    The talk is about git's internal structure. You'll understand what are
+    blobs, trees and commits. How branches and tags are just a fancy names for
+    commits and where it's all stored in the filesystem. It's focused on the
+    conceptual understanding, not the bits and bytes. Will feature a short
+    commandline demonstration.
+** Git structure
+*** A distributed Key/Value store
+*** Keys are SHA-1 hashes of the Values
+*** Objects are immutable
+**** Object's ID will always point to the save value everywhere
+**** Ensured by the SHA-1 magic
+**** Modifying objects
+     "Modifying" an object means copying it and storing the modified version
+     under a different key
+** Basic objects
+*** Blobs
+**** File contents without metadata
+**** Same on every machine
+**** Don't change when you rename the file
+**** Don't change when you change the date/time/author/whatever
+*** Trees
+**** Recursive collection of Blobs and Trees
+**** Blob is a leaf of a Tree
+**** They contain the directory structure
+*** Commits
+**** Snapshot of a repository at a certain time
+**** Full repository Tree + metadata
+**** Parents
+***** This is how the history flow is kept
+***** Commit can have more than one parent
+****** When two commits share the same parent, they're each on a separate branch
+** History
+*** History is handled by a string of commits each referencing to their parent
+*** Branching
+**** 2 (or more) commits share the same parent
+*** Merging
+**** Merge commits
+**** Joins 2 branches together
+**** The Merge Commit has 2 parents
+*** Repository
+**** Directed Acyclic Graph
+***** Has a root
+***** It's not a tree because it goes only in one direction
+***** Merge commits don't create cycles because of the direction constraint
+**** From a given commit you can travel backwards in history but not forward
+**** HEAD -- the latest commit hash on the current branch
+***** From that you can see the entire history of that commit
+***** You can't get to the other branches, though
+****** Thus, git keeps track of every branche's HEAD
+***** "Orphaned" commits
+****** Possible to have commit that no branch leads to
+****** As far as everything is concerned, they don't exist
+****** You can look at them directly if you know their hash, though
+****** History chain
+       Remember, the history is created by a chain of parent references between
+       commits. No commit descends from the orphan and it's not listed as a
+       HEAD so you don't see it as a branch or in the log.
+
+       This also means that these orphans don't cause any harm. They're
+       disconnected from the repository graph and since they're immutable (and
+       their hashes never change), they don't do anything.
+
+       If you pointed a commit or a branch to them, they would become a part of
+       the history.
+****** Garbage collected
+** Everything is a commit
+*** This is where all the magic happens
+*** Branches are commits
+**** What is a branch conceptually?
+***** Keeps track of a particular chain of commits
+***** It at some point diverged from the main line
+***** In short, it's a particular path from a leaf commit to the root in the history
+**** A commit is already capable of seeing all of its history
+**** It needs to encompass the history of the entire branch
+***** So we need to always reference the latest commit in the branch
+**** Each branch has a name
+**** So:
+     Branch is a name assigned to a particular commit that gets updated as new
+     commits are added.
+**** Stored in .git/refs/heads/
+***** filename -> name of the branch
+***** contents -> hash of the HEAD (latest) commit
+**** When a new commit is added, the HEAD is updated to its hash
+**** In the end, it's still a commit
+***** `git checkout master` and `git checkout 5237ae984529806b4fa8720d58a6e90befb1db41` are equivalent
+***** Everything you do on a branch (rebasing, diffing with another branch, etc.) you can do an a commit
+*** Tags are commits
+**** Conceptually
+***** Tag is a named snapshot in time
+***** e.g. Version 1.4.3-RC2
+***** It has some descriptive metadata
+****** Name
+****** Description
+****** Cryptographically signed
+**** We can create a tag by assigning metadata to a particular commit
+**** Stored in .git/refs/tags/
+***** The format is the same as for branches
+***** filename -> name of the tag
+***** contents -> hash of the tagged commit
+*** Difference between tags and branches
+**** Tags don't change
+***** Version 1.4.3-RC2 will always be there no matter where the development moves to
+**** Branches move forward
+***** `new-ui` from yesterday will be different from `new-ui` today (if new commits are added)
+** Names
+*** HEAD
+**** The tip of the current branch
+**** If you add a new commit, this will be its parents
+**** And the HEAD will be updated to the new commit
+*** master
+**** The name of the default branch
+**** Nothing special about it
+***** You can delete it
+***** Rename it
+***** Or whatever -- it's just a name
+** Merging
+*** Joining two branches together
+*** Applies the changes onto the current branch -- the order is significant
+*** Therefore, the operation isn't commutative
+    merging `feature` onto `master`:
+
+        git checkout master; git merge feature
+
+    is different from merging `master` onto `feature`:
+
+        git checkout feature; git merge master
+*** Creates a commit that has two parents (tips of both branches)
+**** This is called the Merge commit
+**** It determines how to merge the branches together
+***** Which branch is merged onto which
+***** Contains conflict resolution if it's needed
+*** After the merge, commits from both branches are shown in git log
+**** If there was a conflict, it's handled in the merge commit
+**** The original commits are unchanged in the log
+*** However, they're still tracked as different branches that just converged via the merge commit
+** Rebasing
+*** "Merging without the bloody merge commit"
+*** Incredibly powerful
+*** Different semantics than merge:
+    git checkout feature; git rebase master
+*** What it does:
+**** Clones `master`
+**** One by one applies the commits from `feature` that are not in `master`
+**** Marks this as the new `feature` branch
+*** It's as if you've added the new changes on top of the new master in the first place
+xwxs*** Result is a single timeline -- no diverging and joining
+*** Merging a rebased branch one is clean, without conflicts and merge commits
+*** Caveats
+**** Pushing a rebased branch causes complications
+***** If you have a `topic` branch that you want to keep in sync with master but carry commits on top
+***** When you push it, rebase onto updated master and push again, you'll get a conflict
+**** *Rebasing changes the histrory* of the rebased branch
+**** *Pushing fails when you've messed up with the history*
+**** Use rebase only on your local branches
+**** Once you've pushed a branch, you really *really* should use merge
+** Remotes
+*** Git is decentralised
+**** You can synchronise your changes with any number of repositories
+**** Any centralised notion is but a convention of the particular group of users
+*** Referencing remote repositories
+**** 
+*** Fetch
+**** Gets the commits from the remote repository
+**** This is fairly easy operation as you can use the hashes to see if the commits are present or not
+**** It doesn't actually modify anything client-side
+***** All your branches remain intact
+***** All your commits remain intact
+*** Pull
+**** Fetches the commits and then updates your local repo
+**** Updates your HEAD to point to the latest commit (if remote had newer changes)
+**** Automatically merges your local commits with the remote ones if they diverge
+**** Creates a merge commit
+**** Use `git pull --rebase` to avoid merge commits on pull
+*** Push
+**** Uploads the local commits to the remote repository
+**** Updates the refs (branches' heads, tags, etc.)
+**** No automatic conflict resolution
+***** If the remote repo is ahead or divergent from the local one, push fails
+** Refs
+*** References
+*** Names for the commits
+*** Allow resolve name collision: tag and branch having the same name
+*** Accepted everywhere a commit hash is: show, log, merge, rebase, checkout
+*** Located in .git/refs/*
+** How are the objects stored?
+*** Not the plaintext/binary stream
+*** Has some headers
+*** Compressed
+* Hands-on Demonstration
+** The difference between Porcelain and Plumbing
+* Resources
+** man 5 gitrepository-layout
+** http://book.git-scm.com/7_how_git_stores_objects.html
+   Describes how Git stores the objects
+** 
